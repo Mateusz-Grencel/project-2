@@ -1,0 +1,116 @@
+*
+{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body
+{
+    background-color:#333;
+    font-family:sans-serif;
+}
+
+section
+{
+    display:flex; /*Właściwość nadajemy na rodzicu elemntu na jakim chcemy pracować. Rozmieszczenie divów w jednej linii. Elementy się kurczą, ale nie rozszerzają. Są responsywne . Wszystkie dzieci otrzymały domyślne właściwości jakie ma flexbox*/
+
+    flex-direction:row;
+    /* Bardzo ważna właściwość i bardzo prosta. Elementy są od lewej strony na osi x. 
+    Właściwość row-reverse sprawia, że elementy są od prawej krawędzi strony i kolejność jest odwrócona. 
+    Właściwość column sprawia, że elementy są ułożone w kolumnie.
+    Właściwość column-reverse sprawia, że elementy są ułożone w kolumnie z odwróconą kolejnością */
+   /* background-color: gray;*/
+   
+   /*Section jest elementem blokowym i zajmuje całą szerokość strony internetowej. Oblicza swoją wysokość na podstawie wielkości dzieci. Reverse zmienia krawędź ekranu rodzica*/
+
+   height: 400px;
+   
+   /* flex-wrap:wrap; */
+   /*Gdy elementy nie mają na tyle miejsca przechodzą do kolejnej lini. Gdy osiągniemy te 300px elementy będą się kurczyć*/
+
+   /* justify-content:flex-start; */
+   /*Sekcja dla rodzica. Jest uwarunkowane jak działa flex-direction: (pracujemy na osi x)
+   flex-start - wartość domyślna
+   flex-end - przyklejenie do prawej krawędzi rodzica
+   center - wyśrodkowanie
+   space-between -równe przerwy między elementami i przyklejone dwa do lewej i prawej krawędzi rodzica
+   space-around - oplata element wokoło przy czym mniejsza odległość od lewej i prawej krawędzi rodzica
+   space-evently - oplata dookoła z równymi odstępami 
+   */
+
+   /* align-items:center; */
+   /*align-items jest osią prostopadłą
+   strech - wartość domyślna. Przy zakomentowaniu wysokości dziecka. Wpływamy na wysokość
+   flex-start - wyrównanie do góry naszego rodzica
+   flex-end - wyrównanie do dołu naszego rodzica
+   center - wyśrodkowanie elementów
+   baseline - wyrównanie elementów do linii czcionki
+     */
+    background-color: #fff;
+    /* align-content:flex-start; */
+    /* align-content: i align-items są na tej samej osi
+    :stretch; - wartość domyślna rozciągnięcie
+    flex-start - przyklejone do samej góry
+    flex-end - przyklejone do samego dołu
+    center - przyklejone do samego dołu
+   space-between -równe przerwy między elementami i przyklejone dwa do lewej i prawej krawędzi rodzica
+   space-around - oplata element wokoło przy czym mniejsza odległość od lewej i prawej krawędzi rodzica
+   space-evently - oplata dookoła z równymi odstępami 
+    */
+    
+}
+
+.square
+{
+    /*Pierwsze trzy linijki dotyczą tekstu*/
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   flex-basis: 300px;
+   /*flex-basis:
+   Zależy od flex-direction rodzica. Jeśli jest row to f-b jest szerokością.Jeśli jest column to f-b jest wysokością. Jest ważniejsza od width czy height*/
+   width:300px;
+   height:150px; 
+   text-align:center;
+   font-size:50px;
+   border:3px solid black;
+   background:lime;
+   
+}
+/*flex-grow*/
+/*Pozwala elementowi rosnąć. Domyślnie wartość ma 0. Jeśli elementowi damy wartość 1 rozciągnie się do końca. Jeśli drugiemu elementowi nadamy 5 to rozciagnie się on proporcjonalnie do pustej przestrzeni jaką ma  */
+/*flex-shrink*/
+/*Pozwala elementowi maleć. Domyślnie wartość ma 1. Element maleje wszystko jest w porządku. Jeśli element ma największą wartość będzie się najbardziej zmniejszać.*/
+/*order:;.
+Wartość domyślna jest 0. Zasada jest prosta. Im mniejszy order tym pierwszy element jest. */
+/*align-self. Domyślnie ma właściwość auto*/
+/**/
+.one
+{
+    /* flex-grow:1; */
+    /* flex-shrink:1; */
+    /* order:1; */
+    align-self:center;
+}
+.two
+{
+    /* flex-grow:2; */
+    /* flex-shrink:1; */
+    /* order:2; */
+    align-self:stretch;
+
+}.three
+{
+    /* flex-grow:9; */
+    /* flex-shrink:1; */
+    /* order:3; */
+    align-self: flex-start;
+}.four
+{
+    /* flex-grow:0; */
+    /* flex-shrink:1; */
+    /* order:0; */
+    align-self: flex-end;
+    
+}
